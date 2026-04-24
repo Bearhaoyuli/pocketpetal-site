@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="646" height="192" viewBox="0 0 646 192" role="img" aria-labelledby="title desc">
+  <title id="title">iOS coming soon badge</title>
+  <desc id="desc">A muted iOS coming soon badge.</desc>
+  <rect width="646" height="192" rx="28" fill="#FFF8EE"/>
+  <rect x="3" y="3" width="640" height="186" rx="25" fill="none" stroke="#A95332" stroke-opacity=".2" stroke-width="6"/>
+  <circle cx="96" cy="96" r="43" fill="#F6EDD9"/>
+  <path d="M108 65c-5 6-13 10-20 9 0-7 4-14 9-18 5-5 13-8 19-8 1 6-3 13-8 17Zm16 76c-6 9-12 18-22 18-9 0-12-6-23-6-10 0-14 6-22 6-9 0-16-9-22-18-12-18-22-51-9-73 6-11 18-18 30-18 9 0 18 6 23 6s16-7 27-6c5 0 18 2 27 14-1 1-16 9-15 27 0 22 19 29 19 30-1 1-3 11-13 20Z" fill="#A95332" opacity=".78"/>
+  <text x="178" y="78" fill="#6F6255" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">iOS APP</text>
+  <text x="178" y="134" fill="#241B14" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="800">Coming soon</text>
+</svg>

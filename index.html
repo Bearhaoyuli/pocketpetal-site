@@ -29,22 +29,32 @@
     <main id="top">
       <section class="hero">
         <div class="wrap hero-grid">
-          <div>
+          <div class="hero-copy">
             <div class="kicker">No ads. No nagging. Just spending.</div>
             <h1>Family spending, without the noise.</h1>
             <p class="lede">
               PocketPetal helps you and your family see where the money went, what is left,
               and who added what. No pop-up ads. No push notifications. No ad tracking.
             </p>
+            <div class="promise-row" aria-label="PocketPetal privacy promises">
+              <div class="promise-card">No pop-up ads</div>
+              <div class="promise-card">No ads</div>
+              <div class="promise-card">No push notifications</div>
+            </div>
             <div class="actions">
-              <a class="button" href="https://play.google.com/store/apps/details?id=com.lihaoyuaz.myapp">
-                Google Play placeholder
+              <a class="store-badge" href="#" aria-label="Google Play placeholder">
+                <img src="./assets/google-play-badge-placeholder.svg" alt="Get it on Google Play">
               </a>
-              <span class="button disabled" aria-disabled="true">iOS coming soon</span>
+              <span class="store-badge disabled" aria-disabled="true">
+                <img src="./assets/app-store-coming-soon.svg" alt="iOS coming soon">
+              </span>
             </div>
             <p class="fine-print">
               No AI slop, no “smart” guilt trips, no feed to scroll. Open it, log it, move on.
             </p>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <img src="./assets/pocketpetal-splash.png" alt="">
           </div>
         </div>
       </section>
@@ -177,10 +187,12 @@
             </p>
           </div>
           <div class="download-row">
-            <a class="button" href="https://play.google.com/store/apps/details?id=com.lihaoyuaz.myapp">
-              Google Play placeholder
+            <a class="store-badge" href="#" aria-label="Google Play placeholder">
+              <img src="./assets/google-play-badge-placeholder.svg" alt="Get it on Google Play">
             </a>
-            <span class="button secondary" aria-disabled="true">iOS coming soon</span>
+            <span class="store-badge disabled" aria-disabled="true">
+              <img src="./assets/app-store-coming-soon.svg" alt="iOS coming soon">
+            </span>
           </div>
         </div>
       </section>

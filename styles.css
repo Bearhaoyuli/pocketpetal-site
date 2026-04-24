@@ -92,6 +92,7 @@ a {
   font-size: 0.95rem;
   font-weight: 750;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -104,16 +105,37 @@ a {
   display: grid;
   align-items: center;
   padding: 52px 0 72px;
-  background:
-    linear-gradient(90deg, rgba(255, 248, 238, 0.98) 0%, rgba(255, 248, 238, 0.86) 48%, rgba(255, 248, 238, 0.24) 100%),
-    url("./assets/pocketpetal-splash.png");
-  background-position: center, right center;
-  background-repeat: no-repeat;
-  background-size: cover, auto 112%;
+  background: linear-gradient(90deg, rgba(255, 248, 238, 0.98) 0%, rgba(255, 248, 238, 0.92) 58%, rgba(255, 248, 238, 0.78) 100%);
 }
 
 .hero-grid {
-  max-width: 760px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.98fr) minmax(260px, 0.62fr);
+  align-items: center;
+  gap: 42px;
+}
+
+.hero-copy {
+  min-width: 0;
+  max-width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-art {
+  justify-self: end;
+  width: min(360px, 100%);
+  border: 1px solid rgba(231, 216, 196, 0.84);
+  border-radius: 8px;
+  background: rgba(255, 252, 246, 0.72);
+  padding: 12px;
+  box-shadow: 0 22px 48px rgba(36, 27, 20, 0.12);
+}
+
+.hero-art img {
+  width: 100%;
+  max-height: 680px;
+  object-fit: contain;
 }
 
 .kicker {
@@ -155,10 +177,31 @@ h1 {
 }
 
 .lede {
-  max-width: 660px;
+  max-width: min(660px, 100%);
   margin-bottom: 30px;
   color: var(--soil);
   font-size: 1.22rem;
+}
+
+.promise-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 680px;
+  margin-bottom: 26px;
+}
+
+.promise-card {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(169, 83, 50, 0.26);
+  border-radius: 8px;
+  background: #fff4e3;
+  padding: 14px;
+  color: var(--clay-dark);
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(36, 27, 20, 0.06);
 }
 
 .actions {
@@ -166,6 +209,25 @@ h1 {
   flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 24px;
+}
+
+.store-badge {
+  display: inline-flex;
+  width: 206px;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 18px rgba(36, 27, 20, 0.12);
+  text-decoration: none;
+}
+
+.store-badge img {
+  width: 100%;
+  height: auto;
+}
+
+.store-badge.disabled {
+  opacity: 0.82;
+  box-shadow: none;
 }
 
 .button {
@@ -457,14 +519,22 @@ h1 {
   }
 
   .hero {
-    min-height: calc(100svh - 72px);
+    min-height: auto;
     padding: 52px 0 64px;
-    background:
-      linear-gradient(90deg, rgba(255, 248, 238, 0.98) 0%, rgba(255, 248, 238, 0.9) 58%, rgba(255, 248, 238, 0.45) 100%),
-      url("./assets/pocketpetal-splash.png");
-    background-position: center, right -220px center;
-    background-repeat: no-repeat;
-    background-size: cover, auto 108%;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-art {
+    justify-self: start;
+    width: min(260px, 72vw);
+    border: 1px solid rgba(231, 216, 196, 0.84);
+    background: rgba(255, 252, 246, 0.72);
+    padding: 10px;
+    opacity: 1;
+    box-shadow: 0 18px 36px rgba(36, 27, 20, 0.1);
   }
 
   h1 {
@@ -493,6 +563,10 @@ h1 {
 
   .grid,
   .privacy-list {
+    grid-template-columns: 1fr;
+  }
+
+  .promise-row {
     grid-template-columns: 1fr;
   }
 }
@@ -527,14 +601,7 @@ h1 {
   }
 
   .hero {
-    min-height: calc(100svh - 64px);
     padding: 44px 0 56px;
-    background:
-      linear-gradient(90deg, rgba(255, 248, 238, 0.98) 0%, rgba(255, 248, 238, 0.94) 66%, rgba(255, 248, 238, 0.52) 100%),
-      url("./assets/pocketpetal-splash.png");
-    background-position: center, right -285px center;
-    background-repeat: no-repeat;
-    background-size: cover, auto 104%;
   }
 
   .kicker {
@@ -550,9 +617,19 @@ h1 {
     font-size: 1.06rem;
   }
 
-  .actions .button {
-    flex: 1 1 158px;
-    min-width: 0;
+  .store-badge {
+    width: min(204px, 100%);
+  }
+
+  .actions,
+  .download-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .promise-card {
+    min-height: 54px;
   }
 
   .section-heading h2 {
@@ -573,9 +650,8 @@ h1 {
     padding: 20px;
   }
 
-  .download-row .button {
-    flex: 1 1 158px;
-    min-width: 0;
+  .download-row {
+    align-items: flex-start;
   }
 
   .footer-inner {
