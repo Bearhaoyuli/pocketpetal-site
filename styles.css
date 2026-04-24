@@ -22,6 +22,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -30,6 +31,7 @@ body {
   color: var(--ink);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.55;
+  overflow-x: hidden;
 }
 
 img {
@@ -149,6 +151,7 @@ h1 {
   font-size: 6.4rem;
   line-height: 0.94;
   letter-spacing: 0;
+  overflow-wrap: break-word;
 }
 
 .lede {
@@ -178,6 +181,8 @@ h1 {
   font-weight: 850;
   text-decoration: none;
   box-shadow: 0 8px 18px rgba(169, 83, 50, 0.22);
+  text-align: center;
+  white-space: normal;
 }
 
 .button.secondary {
@@ -452,14 +457,14 @@ h1 {
   }
 
   .hero {
-    min-height: auto;
-    padding-top: 44px;
+    min-height: calc(100svh - 72px);
+    padding: 52px 0 64px;
     background:
-      linear-gradient(180deg, rgba(255, 248, 238, 0.98) 0%, rgba(255, 248, 238, 0.9) 58%, rgba(255, 248, 238, 0.56) 100%),
+      linear-gradient(90deg, rgba(255, 248, 238, 0.98) 0%, rgba(255, 248, 238, 0.9) 58%, rgba(255, 248, 238, 0.45) 100%),
       url("./assets/pocketpetal-splash.png");
-    background-position: center, bottom center;
+    background-position: center, right -220px center;
     background-repeat: no-repeat;
-    background-size: cover, 100% auto;
+    background-size: cover, auto 108%;
   }
 
   h1 {
@@ -493,8 +498,13 @@ h1 {
 }
 
 @media (max-width: 520px) {
+  .wrap {
+    width: min(100% - 24px, 1120px);
+  }
+
   .nav-inner {
     min-height: 64px;
+    gap: 10px;
   }
 
   .brand img {
@@ -502,16 +512,52 @@ h1 {
     height: 36px;
   }
 
+  .brand {
+    gap: 9px;
+  }
+
+  .brand span {
+    font-size: 0.98rem;
+  }
+
+  .nav-links .button {
+    min-height: 42px;
+    padding: 0 12px;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    min-height: calc(100svh - 64px);
+    padding: 44px 0 56px;
+    background:
+      linear-gradient(90deg, rgba(255, 248, 238, 0.98) 0%, rgba(255, 248, 238, 0.94) 66%, rgba(255, 248, 238, 0.52) 100%),
+      url("./assets/pocketpetal-splash.png");
+    background-position: center, right -285px center;
+    background-repeat: no-repeat;
+    background-size: cover, auto 104%;
+  }
+
+  .kicker {
+    max-width: 100%;
+  }
+
   h1 {
-    font-size: 3.2rem;
+    font-size: 2.8rem;
+    line-height: 0.98;
   }
 
   .lede {
     font-size: 1.06rem;
   }
 
+  .actions .button {
+    flex: 1 1 158px;
+    min-width: 0;
+  }
+
   .section-heading h2 {
     font-size: 2.1rem;
+    line-height: 1.06;
   }
 
   .quote {
@@ -519,10 +565,39 @@ h1 {
   }
 
   .section {
-    padding: 56px 0;
+    padding: 48px 0;
+  }
+
+  .card,
+  .panel {
+    padding: 20px;
+  }
+
+  .download-row .button {
+    flex: 1 1 158px;
+    min-width: 0;
+  }
+
+  .footer-inner {
+    display: grid;
+    justify-content: start;
   }
 
   .floating-note {
     display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  h1 {
+    font-size: 2.45rem;
+  }
+
+  .brand span {
+    font-size: 0.9rem;
+  }
+
+  .nav-links .button {
+    padding: 0 10px;
   }
 }
